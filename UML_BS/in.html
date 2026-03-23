@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UML - Sistema Bairro Solidário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #1e3a5f;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            color: #1e3a5f;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            background-color: #1e3a5f;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        pre {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .list {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .list ul {
+            list-style-type: square;
+        }
+
+        .tabs {
+            margin-top: 30px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #1e3a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .tab-button:hover {
+            background-color: #34495e;
+        }
+
+        .tab-content {
+            margin-top: 20px;
+        }
+
+        .tab-content.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>📊 Documentação UML - Bairro Solidário</h1>
+    <p>Sistema de Segurança Comunitária para o Bairro Solidário</p>
+</header>
+
+<!-- Módulo 1: Arquitetura do Sistema -->
+<section class="section">
+    <h2>📂 Arquitetura do Sistema</h2>
+    <p>O sistema **Bairro Solidário** é estruturado em camadas. Cada camada tem uma responsabilidade específica.</p>
+    <div class="highlight">Arquitetura:</div>
+    <pre>
+    [ Apresentação ] → [ Controle ] → [ Negócio ] → [ Dados ]
+    </pre>
+    <p><strong>Apresentação:</strong> Interface com o usuário.</p>
+    <p><strong>Controle:</strong> Processamento das interações.</p>
+    <p><strong>Negócio:</strong> Regras de segurança comunitária.</p>
+    <p><strong>Dados:</strong> Armazenamento das informações.</p>
+</section>
+
+<!-- Módulo 2: Diagrama de Classes -->
+<section class="section">
+    <h2>🔸 Diagrama de Classes</h2>
+    <p>O diagrama de classes descreve as principais entidades do sistema e seus atributos.</p>
+    <div class="highlight">Classes principais:</div>
+    <pre>
+        Morador
+        - id
+        - nome
+        - endereço
+        - telefone
+
+        Ocorrência
+        - id
+        - tipo (roubo, invasão, barulho)
+        - status (aberta, resolvida)
+        - descrição
+        - data
+        - localização
+
+        Alerta
+        - id
+        - mensagem
+        - data
+
+        Comentário
+        - id
+        - texto
+        - data
+    </pre>
+</section>
+
+<!-- Módulo 3: Casos de Uso -->
+<section class="section">
+    <h2>🔸 Casos de Uso</h2>
+    <p>Os casos de uso descrevem as funcionalidades do sistema e as interações dos usuários com ele.</p>
+    <div class="highlight">Casos de Uso principais:</div>
+    <pre>
+        1. Morador → Sistema: Registrar ocorrência
+        2. Sistema → Banco de Dados: Salvar ocorrência
+        3. Sistema → Moradores: Enviar alerta
+        4. Moradores → Sistema: Visualizar ocorrência
+    </pre>
+    <p>Esses casos de uso representam o fluxo básico do sistema, envolvendo o registro de ocorrências, notificações e visualização.</p>
+</section>
+
+<!-- Módulo 4: Diagrama de Sequência -->
+<section class="section">
+    <h2>🔸 Diagrama de Sequência</h2>
+    <p>O diagrama de sequência mostra como os objetos interagem em uma sequência de eventos.</p>
+    <div class="highlight">Exemplo de sequência de registro de ocorrência:</div>
+    <pre>
+        Morador → Sistema: Registrar ocorrência
+        Sistema → Banco de Dados: Salvar ocorrência
+        Sistema → Moradores: Enviar alerta
+        Moradores → Sistema: Visualizar ocorrência
+    </pre>
+    <p>Este diagrama descreve o fluxo de dados entre o **Morador**, **Sistema** e **Banco de Dados**.</p>
+</section>
+
+<!-- Módulo 5: Regras de Negócio -->
+<section class="section">
+    <h2>📜 Regras de Negócio</h2>
+    <p>As principais regras de negócio do sistema são:</p>
+    <ul class="list">
+        <li><strong>Cadastro de Moradores:</strong> Moradores devem se cadastrar para registrar ocorrências.</li>
+        <li><strong>Status das Ocorrências:</strong> As ocorrências podem ter os status **aberta**, **em análise** ou **resolvida**.</li>
+        <li><strong>Envio de Alertas:</strong> Somente administradores podem enviar alertas para todos os moradores.</li>
+        <li><strong>Comentários nas Ocorrências:</strong> Moradores podem comentar em ocorrências para confirmar que viram o evento.</li>
+    </ul>
+</section>
+
+<!-- Módulo 6: Conclusão -->
+<section class="section">
+    <h2>✅ Conclusão</h2>
+    <p>O **Bairro Solidário** oferece uma plataforma robusta para aumentar a segurança da comunidade. Ele permite o registro de ocorrências em tempo real, o envio de alertas para os moradores e a interação da comunidade para confirmar e comentar sobre eventos suspeitos.</p>
+</section>
+
+<script>
+    // Função para alternar as seções
+    function showTab(tabId) {
+        // Esconde todas as seções
+        document.querySelectorAll('.tab-content').forEach(function(tab) {
+            tab.classList.add('hidden');
+        });
+
+        // Exibe a seção desejada
+        document.getElementById(tabId).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
